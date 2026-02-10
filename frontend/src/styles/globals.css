@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #0A0A0A;
+    --foreground: #ffffff;
+    --primary: #3B82F6;
+  }
+  body {
+    @apply bg-[#0A0A0A] text-white font-sans antialiased;
+  }
+}
+
+/* Chat Interface Styles */
+.chat-interface {
+  @apply max-w-3xl mx-auto px-4 py-8 mb-16 rounded-2xl bg-gray-900/50 border border-gray-800 backdrop-blur-sm;
+}
+.chat-header {
+  @apply flex items-center justify-between mb-6 pb-4 border-b border-gray-800;
+}
+.chat-header-content {
+  @apply flex items-center gap-4;
+}
+.chat-avatar {
+  @apply w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary;
+}
+.chat-title {
+  @apply text-lg font-semibold;
+}
+.chat-subtitle {
+  @apply text-sm text-gray-400;
+}
+.clear-btn {
+  @apply text-gray-400 hover:text-white;
+}
+.error-banner {
+  @apply flex items-center gap-2 px-4 py-3 mb-4 rounded-lg bg-red-500/10 text-red-400 text-sm;
+}
+.chat-messages {
+  @apply min-h-[300px] max-h-[500px] overflow-y-auto space-y-4 mb-6 pr-2;
+}
+.chat-welcome {
+  @apply flex flex-col items-center justify-center py-12 text-center;
+}
+.welcome-icon {
+  @apply w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-4;
+}
+.welcome-title {
+  @apply text-xl font-semibold mb-2;
+}
+.welcome-text {
+  @apply text-gray-400 mb-8 max-w-md;
+}
+.suggested-prompts {
+  @apply w-full max-w-2xl;
+}
+.prompts-label {
+  @apply text-sm text-gray-400 mb-3;
+}
+.prompts-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 gap-2;
+}
+.prompt-button {
+  @apply px-4 py-3 text-left text-sm rounded-lg bg-gray-800/80 border border-gray-700 text-gray-300 hover:bg-gray-700/80 hover:border-primary/30 hover:text-white transition-colors;
+}
+.message {
+  @apply flex gap-3;
+}
+.message-user {
+  @apply flex-row-reverse;
+}
+.message-user .message-content {
+  @apply items-end text-right;
+}
+.message-avatar {
+  @apply flex-shrink-0 w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center text-gray-400;
+}
+.message-user .message-avatar {
+  @apply bg-primary/20 text-primary;
+}
+.message-content {
+  @apply flex flex-col gap-1 max-w-[85%];
+}
+.message-text {
+  @apply px-4 py-2.5 rounded-xl bg-gray-800/80 text-sm leading-relaxed;
+}
+.message-user .message-text {
+  @apply bg-primary/20;
+}
+.message-text.error-message {
+  @apply bg-red-500/10 text-red-400;
+}
+.message-time {
+  @apply text-xs text-gray-500;
+}
+.typing-indicator {
+  @apply flex gap-1 px-4 py-3;
+}
+.typing-indicator span {
+  @apply w-2 h-2 rounded-full bg-gray-500 animate-pulse;
+}
+.typing-indicator span:nth-child(1) { animation-delay: 0ms; }
+.typing-indicator span:nth-child(2) { animation-delay: 150ms; }
+.typing-indicator span:nth-child(3) { animation-delay: 300ms; }
+.chat-input-container {
+  @apply flex gap-2;
+}
+.chat-input {
+  @apply flex-1;
+}
+.send-button {
+  @apply flex-shrink-0;
+}
+.message-link {
+  @apply break-all;
+}
